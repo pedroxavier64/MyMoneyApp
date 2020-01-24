@@ -13,10 +13,10 @@ class BillingCycleList extends Component {
     renderRows() {
         const list = this.props.list || []
         return list.map(bc => (
-            <tr key={bc.id.toString()}>
-                <td>{bc.Name}</td>
-                <td>{bc.Month}</td>
-                <td>{bc.Year}</td>
+            <tr key={bc._id.toString()}>
+                <td>{bc.name}</td>
+                <td>{bc.month}</td>
+                <td>{bc.year}</td>
             </tr>
         ))
     }
@@ -24,12 +24,13 @@ class BillingCycleList extends Component {
     render() {
         return(
             <div>
-                <table className="table">
+                <table className="table table-striped">
                     <thead>
                         <tr>
                             <th>Nome</th>
                             <th>Mês</th>
                             <th>Ano</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
