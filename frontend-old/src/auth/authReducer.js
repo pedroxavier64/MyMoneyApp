@@ -7,10 +7,10 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case 'TOKEN_VALIDATED':
-            if (action.payload){
+            if (action.payload) {
                 return {...state, validToken: true}
             } else {
-                localStorage.removeItem(userKey)
+                localStorage.getItem(userKey)
                 return {...state, validToken: false, user: null}
             }
         case 'USER_FETCHED':
