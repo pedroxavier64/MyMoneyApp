@@ -1,8 +1,19 @@
-import React from 'react'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
-export default props => (
-    <footer className="main-footer">
-        <strong>Tribunal de Contas do Estado de Alagoas - TCEAL 2019 |</strong>
-        <a href="https://www.tceal.tc.br/" target="_blank"> www.tceal.tc.br</a>.
-    </footer>
-)
+class Footer extends Component {
+    render() {
+        const {name} = this.props.user
+        return(
+            <footer className='main-footer'> 
+                {name} | <b>My</b>MoneyApp &nbsp; 
+                <strong> 
+                    Copyright &copy; 
+                </strong>
+            </footer>
+        )
+    }
+}
+
+const mapStateToProps = state => ({ user: state.auth.user })
+export default connect(mapStateToProps, null)(Footer)
